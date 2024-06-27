@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS TASK 5</title>
+
+    <br>
+    <h1>TASK-5</h1>
+    <p><big><b> Name: </big></b> LAKSHANA R<br>
+    <big><b> Reg No.: </big></b> 21MIS0357</p>
+    <br>
+    <br>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      type="text/css"
+    />
+</head>
+<body>
+    <center>
+        <form name="form1" onsubmit="return validateForm()">
+            <table>
+                <tr>
+                    <td><label for="name" class="mx-4 my-3">Name: </label></td>
+                    <td>
+                        <input type="text" id="name" />
+                        <span id="valid_name" class="mx-2 text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="email" class="mx-4 my-3">Email: </label></td>
+                    <td>
+                        <input type="email" id="email" />
+                        <span id="valid_email" class="mx-2 text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="web" class="mx-4 my-3">Website: </label></td>
+                    <td>
+                        <input type="text" id="web" />
+                        <span id="valid_web" class="mx-2 text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="msg" class="mx-4 my-3">Message: </label></td>
+                    <td>
+                        <textarea name="msg" cols="30" rows="3" id="msg"></textarea>
+                        <span id="valid_msg" class="mx-2 text-danger"></span>
+                    </td>
+                </tr>
+            </table>
+            <tr>
+                <button type="submit" class="btn btn-primary my-3" id="sub_btn">
+                    Submit
+                </button>
+            </tr>
+        </form>
+    </center>
+
+    <script>
+        function validateForm() {
+            const btn = document.querySelector("#sub_btn");
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var website = document.getElementById("web").value;
+            var message = document.getElementById("msg").value;
+            let flag = 0;
+
+            if (name.length == 0) {
+                document.getElementById("valid_name").innerHTML = "This field is required";
+                document.getElementById("name").style.borderColor = "red";
+                flag = 1;
+            } else {
+                document.getElementById("valid_name").innerHTML = "";
+                document.getElementById("name").style.borderColor = "";
+            }
+
+            if (email.length == 0) {
+                document.getElementById("valid_email").innerHTML = "This field is required";
+                document.getElementById("email").style.borderColor = "red";
+                flag = 1;
+            } else {
+                document.getElementById("valid_email").innerHTML = "";
+                document.getElementById("email").style.borderColor = "";
+            }
+
+            if (website.length == 0) {
+                document.getElementById("valid_web").innerHTML = "This field is required";
+                document.getElementById("web").style.borderColor = "red";
+                flag = 1;
+            } else {
+                document.getElementById("valid_web").innerHTML = "";
+                document.getElementById("web").style.borderColor = "";
+            }
+
+            if (message.length == 0) {
+                document.getElementById("valid_msg").innerHTML = "This field is required";
+                document.getElementById("msg").style.borderColor = "red";
+                flag = 1;
+            } else {
+                document.getElementById("valid_msg").innerHTML = "";
+                document.getElementById("msg").style.borderColor = "";
+            }
+
+            if (flag) {
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

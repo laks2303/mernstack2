@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS TASK 6</title>
+    <h1>TASK- 6</h1>
+<p><big><b> Name: </big></b> LAKSHANA R<br>
+<big><b> Reg No.: </big></b> 21MIS0357</p>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      type="text/css"
+    />
+</head>
+<body>
+    <center>
+        <div class="w-25 mt-5" style="background-color: #f7f7f7">
+            <div class="row my-4"></div>
+
+            <div class="my-3"><h2>Instagram</h2></div>
+            <div class="input-group mb-3">
+                <span class="input-group-text ms-4" id="basic-addon1"><img src="./user-solid.svg" alt="user" width="15"></span>
+                <input type="text" class="form-control me-4" placeholder="Username" id="uname">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text ms-4" id="basic-addon1"><img src="./lock-solid.svg" alt="pass" width="15"></span>
+                <input type="password" class="form-control me-4" placeholder="Password" id="pw">
+            </div>
+
+            <div class="my-2 mx-4 d-grid">
+                <button onclick="validate()" class="btn btn-primary">Log in</button>
+            </div>
+            
+            <p class="fs-5 my-4">
+                <span id="error" class="text-danger"></span>
+            </p>
+
+            <div>
+                <p>
+                    <span style="float: left; font-size: small;" class="ms-4"><input type="checkbox" name="rem" id="rem"> Remember me</span>
+                    <span style="float: right; font-size: small;" class="me-4"><a href="">Forgot Password?</a></span>
+                </p>
+            </div>
+            <div class="row my-4"></div>
+            <div class="row"></div> 
+        </div>
+        <div style="font-size: small;" class="my-3">
+            <span>Don't have an account! <a href="#" style="text-decoration: none;">Sign up here.</a></span>
+        </div>
+    </center>
+
+    <script>
+        function validate() {
+            let uname = document.getElementById("uname").value;
+            let pw = document.getElementById("pw").value;
+            if (uname.length < 7 || pw.length < 7) {
+                document.getElementById("error").innerHTML = "Invalid Username and password";
+            } else {
+                document.getElementById("error").innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>

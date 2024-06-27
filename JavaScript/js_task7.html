@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 7</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css2?family=Pacifico&display=swap' rel="stylesheet">
+    <script src="https://kit.fontawesome.com/eb057bb5a5.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px; /* Added padding for better spacing */
+        }
+
+        .train {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .animation-controls {
+            margin-top: 20px;
+            display: flex; /* Flexbox to align buttons */
+            justify-content: center; /* Center buttons horizontally */
+        }
+
+        .animation-controls button {
+            margin: 5px; /* Margin between buttons */
+        }
+
+        .footer-info {
+            font-size: 12px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        /* Animation Keyframes */
+        .animate {
+            animation: animation1 5s infinite;
+        }
+
+        @keyframes animation1 {
+            from { transform: translateX(0); }
+            to { transform: translateX(100%); }
+        }
+    </style>
+    <script>
+        function start() {
+            document.getElementById('train').classList.add('animate');
+        }
+
+        function stop() {
+            document.getElementById('train').classList.remove('animate');
+        }
+    </script>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>TASK- 7</h1>
+        <p><big><b> Name: </big></b> LAKSHANA R<br>
+        <big><b> Reg No.: </big></b> 21MIS0357</p>
+        <img id="train" src="train" alt="train" class="train">
+        <h3 style="font-weight: bold; margin-top: 20px;">Click the following buttons to handle animation</h3>
+        <div class="animation-controls">
+            <button class="m-1 d-flex justify-content-center" onclick="start()">Start</button>
+            <button class="m-1 d-flex justify-content-center" onclick="stop()">Stop</button>
+        </div>
+        <div class="footer-info">All rights reserved &copy; 2024</div>
+    </div>
+</body>
+</html>
